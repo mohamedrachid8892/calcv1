@@ -1,9 +1,13 @@
 """Multiplication Class"""
+from calculator.operations.calculation import Calculation
 
-class Multiplication:
+class Multiplication(Calculation):
     """Multiplication Class"""
 
-    @staticmethod
-    def multiply(value_a, value_b):
-        """Multiply two numbers together"""
-        return value_a * value_b
+    def get_result(self):
+        """Multiply method to get the product of numbers"""
+
+        product_of_values = 1.0
+        for value in self.values:
+            product_of_values = value * product_of_values
+        return product_of_values

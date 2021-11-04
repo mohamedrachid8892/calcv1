@@ -4,26 +4,51 @@ from calculator.operations.divide import Division
 from calculator.operations.multiply import Multiplication
 from calculator.operations.subtract import Subtraction
 
+
 class Calculator:
     """Calculator class for performing simple arithmetic operations"""
-    calculation = list
+    history = []
 
     @staticmethod
-    def add_number(value_a, value_b):
+    def clear_history():
+        """Clear the calculation history"""
+        Calculator.history.clear()
+        return True
+
+    @staticmethod
+    def get_calculation(num):
+        """Get a calculation from the history"""
+        return Calculator.history[num]
+
+    @staticmethod
+    def get_calculation_last():
+        """Get the most recent calculation"""
+        return Calculator.history[-1]
+
+    @staticmethod
+    def add_numbers(*args):
         """Adds two numbers together"""
-        return Addition.add(value_a, value_b)
+        addition = Addition(args)
+        Calculator.history.append(addition)
+        return addition.get_result()
 
     @staticmethod
-    def subtract_number(value_a, value_b):
+    def subtract_numbers(*args):
         """Subtracts value_b from value_a"""
-        return Subtraction.subtract(value_a, value_b)
+        subtraction = Subtraction(args)
+        Calculator.history.append(subtraction)
+        return subtraction.get_result()
 
     @staticmethod
-    def multiply_number(value_a, value_b):
+    def multiply_numbers(*args):
         """Multiplies two numbers together"""
-        return Multiplication.multiply(value_a, value_b)
+        multiplication = Multiplication(args)
+        Calculator.history.append(multiplication)
+        return multiplication.get_result()
 
     @staticmethod
-    def divide_number(value_a, value_b):
+    def divide_numbers(*args):
         """Divides value_a by value_b"""
-        return Division.divide(value_a, value_b)
+        division = Division(args)
+        Calculator.history.append(division)
+        return division.get_result()

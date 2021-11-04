@@ -3,4 +3,6 @@ from calculator.operations.subtract import Subtraction
 
 def test_subtraction():
     """Testing the subtraction method"""
-    assert Subtraction.subtract(1, 2) == -1
+    numbers = [1.0, 2.0]
+    subtraction = Subtraction(numbers)
+    assert subtraction.get_result() == -1

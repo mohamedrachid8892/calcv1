@@ -3,8 +3,12 @@ from calculator.operations.divide import Division
 
 def test_division():
     """Testing the division method for non-zero arguments"""
-    assert Division.divide(6, 2) == 3
+    numbers = [4.0, 2.0]
+    division = Division(numbers)
+    assert division.get_result() == 2
 
 def test_addition_by_zero():
     """Testing the case where you divide by zero"""
-    assert Division.divide(1, 0) == ZeroDivisionError
+    numbers = [4, 0]
+    division = Division(numbers)
+    assert division.get_result()  == ZeroDivisionError

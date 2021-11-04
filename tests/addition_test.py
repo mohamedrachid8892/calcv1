@@ -3,4 +3,6 @@ from calculator.operations.add import Addition
 
 def test_addition():
     """Testing addition"""
-    assert Addition.add(1,1) == 2
+    numbers = [1.0, 2.0]
+    addition = Addition(numbers)
+    assert addition.get_result() == 3.0

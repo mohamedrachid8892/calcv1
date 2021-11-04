@@ -1,9 +1,14 @@
 """Subtraction Class"""
+from calculator.operations.calculation import Calculation
 
-class Subtraction:
+class Subtraction(Calculation):
     """Subtraction Class"""
 
-    @staticmethod
-    def subtract(value_a, value_b):
-        """Subtract value_b from value_a"""
-        return value_a - value_b
+    def get_result(self):
+        """Subtract method to get the difference of numbers"""
+
+        difference_of_values = self.values[0]
+        print(self.values[0])
+        for value in self.values[1:]:
+            difference_of_values = difference_of_values - value
+        return difference_of_values
