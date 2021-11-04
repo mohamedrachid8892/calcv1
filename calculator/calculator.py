@@ -16,14 +16,25 @@ class Calculator:
         return True
 
     @staticmethod
-    def get_calculation(num):
+    def number_of_calculations():
+        """Counts the number of calculations in the history"""
+        return len(Calculator.history)
+
+    @staticmethod
+    def remove_calculation(index):
+        """Removes the ith calculation from the history"""
+        Calculator.history.pop(index)
+        return True
+
+    @staticmethod
+    def get_calculation_first():
         """Get a calculation from the history"""
-        return Calculator.history[num]
+        return Calculator.history[0].get_result()
 
     @staticmethod
     def get_calculation_last():
         """Get the most recent calculation"""
-        return Calculator.history[-1]
+        return Calculator.history[-1].get_result()
 
     @staticmethod
     def add_numbers(*args):
