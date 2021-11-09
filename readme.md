@@ -1,4 +1,4 @@
-Version 1 of Calculator Project.
+Version 3 of Calculator Project.
 
 Supports basic arithmetic functions (add, subtract, multiply, divide).
 
