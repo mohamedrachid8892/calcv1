@@ -1,5 +1,6 @@
 """Calculation class"""
 
+
 class Calculation:
     """Calculation class is used by the calculations to complete their operation"""
 

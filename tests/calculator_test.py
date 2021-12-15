@@ -1,7 +1,8 @@
 """Testing the Calculator"""
 import pytest
-from calculator.calculator import Calculator
-from calculator.history.calculations import Calculations
+from calc.calculator import Calculator
+from calc.history.calculations import Calculations
+
 
 @pytest.fixture
 def clear_history_fixture():
@@ -9,37 +10,49 @@ def clear_history_fixture():
     # pylint: disable=redefined-outer-name
     Calculations.clear_history()
 
+
 def test_calculator_add_static(clear_history_fixture):
-    """testing that our calculator has a static method for addition"""
+    """testing that our calc has a static method for addition"""
     # pylint: disable=unused-argument,redefined-outer-name
-    my_tuple = (1.0,2.0,5.0)
+    my_tuple = (1.0, 2.0, 5.0)
     Calculator.add_numbers(my_tuple)
     assert Calculator.get_result_value() == 8.0
+
 
 def test_calculator_subtract_static(clear_history_fixture):
     """Testing the subtract method of the calc"""
     # pylint: disable=unused-argument,redefined-outer-name
-    my_tuple = (1.0,2.0,3.0)
+    my_tuple = (1.0, 2.0, 3.0)
     Calculator.subtract_numbers(my_tuple)
     assert Calculator.get_result_value() == -4.0
+
 
 def test_calculator_multiply_static(clear_history_fixture):
     """Testing the multiply method of the calc"""
     # pylint: disable=unused-argument,redefined-outer-name
-    my_tuple = (1.0,2.0,3.0)
+    my_tuple = (1.0, 2.0, 3.0)
     Calculator.multiply_numbers(my_tuple)
     assert Calculator.get_result_value() == 6.0
+
 
 def test_calculator_divide_static(clear_history_fixture):
     """Testing the divide method of the calc"""
     # pylint: disable=unused-argument,redefined-outer-name
-    my_type = (8.0,2.0,2.0)
-    Calculator.divide_numbers(my_type)
+    my_tuple = (8.0, 2.0, 2.0)
+    Calculator.divide_numbers(my_tuple)
     assert Calculator.get_result_value() == 2.0
+
 
 def test_calculator_divide_by_zero_static(clear_history_fixture):
     """Testing the divide by zero exception of the calc"""
     # pylint: disable=unused-argument,redefined-outer-name
-    my_type = (8.0,0.0)
-    Calculator.divide_numbers(my_type)
-    assert Calculator.get_result_value() == ZeroDivisionError
+    my_tuple = (8.0, 0.0)
+    with pytest.raises(ZeroDivisionError):
+        Calculator.divide_numbers(my_tuple)
+        print(Calculator.get_result_value())
+
+
+def test_calculator_get_history(clear_history_fixture):
+    # pylint: disable=unused-argument,redefined-outer-name
+    """Testing get history method"""
+    assert Calculator.get_history() == Calculations.history

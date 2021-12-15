@@ -1,8 +1,13 @@
 """Testing Addition"""
-from calculator.operations.add import Addition
+from calc.calculations.add import Addition
+
 
 def test_addition():
     """Testing addition"""
-    numbers = (1.0, 2.0)
+
+    # Arrange
+    numbers = (1.0, 2.0, 3.0)
+    # Act
     addition = Addition(numbers)
-    assert addition.get_result() == 3.0
+    # Assert
+    assert addition.get_result() == 6.0

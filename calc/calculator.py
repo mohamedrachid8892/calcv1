@@ -1,10 +1,15 @@
-"""Simple calculator that can perform the basic arithmetic operations"""
-from calculator.history.calculations import Calculations
+"""Simple calc that can perform the basic arithmetic calculations"""
+from calc.history.calculations import Calculations
 
 
 class Calculator:
-    """Calculator class for performing simple arithmetic operations"""
+    """Calculator class for performing simple arithmetic calculations"""
+
     history = []
+
+    @staticmethod
+    def csv_row_to_tuple():
+        """Reads in a CSV file to be processed"""
 
     @staticmethod
     def get_result_value():
@@ -34,3 +39,18 @@ class Calculator:
         """Divides a tuple of numbers"""
         Calculations.add_division_calculation(tuple_values)
         return True
+
+    @staticmethod
+    def get_history():
+        """Returns the history of calculations"""
+        return Calculations.history
+
+    # @staticmethod
+    # def get_history_from_csv():
+    #     """Get history from CSV file"""
+    #     return Calculations.readHistoryfromCSV()
+    #
+    # @staticmethod
+    # def write_history_to_csv():
+    #     """Write the history to a CSV file"""
+    #     return Calculations.writeHistoryToCSV()

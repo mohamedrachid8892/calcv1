@@ -1,5 +1,6 @@
 """Division Class"""
-from calculator.operations.calculation import Calculation
+from calc.calculations.calculation import Calculation
+
 
 class Division(Calculation):
     """Division Class"""
@@ -9,7 +10,8 @@ class Division(Calculation):
 
         quotient_of_values = self.values[0]
         for value in self.values[1:]:
-            if value == 0:
-                return ZeroDivisionError
-            quotient_of_values = quotient_of_values / value
+            try:
+                quotient_of_values = quotient_of_values / value
+            except ZeroDivisionError as zero_division_error:
+                raise ZeroDivisionError from zero_division_error
         return quotient_of_values
