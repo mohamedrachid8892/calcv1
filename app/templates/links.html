@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Useful Links{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+<section class="text-sm-start">
+      <div class="container">
+        <div class="d-sm-flex align-items-md-center">
+          <h2 class="py-2"><strong>Useful Links</strong></h2>
+        </div>
+        <div>
+          <p>Some links I found useful when constructing this site:</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a target="_blank" href="https://blog.miguelgrinberg.com/post/beautiful-interactive-tables-for-your-flask-templates" class="nounderline">Beautiful Tables</a></li>
+            <li class="list-group-item"><a class="nounderline" target="_blank" href="https://flask.palletsprojects.com/en/2.0.x/">Flask Documentation</a></li>
+            <li class="list-group-item"><a class="nounderline" target="_blank" href="https://www.statology.org/pandas-to-csv-append/">Working with CSV files using Pandas</a></li>
+            <li class="list-group-item"><a class="nounderline" target="_blank" href="https://realpython.com/pandas-read-write-files/">Working with CSV files using Pandas 2</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+{% endblock %}

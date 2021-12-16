@@ -5,6 +5,8 @@ from calc.calculations.calculation import Calculation
 class Division(Calculation):
     """Division Class"""
 
+    operation = "division"
+
     def get_result(self):
         """Divide numbers to get the quotient, checking if the divisor is 0"""
 

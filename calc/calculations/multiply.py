@@ -5,6 +5,8 @@ from calc.calculations.calculation import Calculation
 class Multiplication(Calculation):
     """Multiplication Class"""
 
+    operation = "multiplication"
+
     def get_result(self):
         """Multiply method to get the product of numbers"""
 

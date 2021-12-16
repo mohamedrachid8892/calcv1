@@ -16,6 +16,7 @@ class Calculations:
     def read_history_from_csv():
         """Read the history from csv and put it into the history"""
 
+
     @staticmethod
     def write_history_to_csv():
         """Write the history to csv file"""

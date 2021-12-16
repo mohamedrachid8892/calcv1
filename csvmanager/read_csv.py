@@ -7,6 +7,6 @@ class ReadCSV:
     """Class that handles reading CSV files using Pandas"""
 
     @staticmethod
-    def data_frame_from_csv(filename):
+    def data_frame_from_csv():
         """Create a Pandas dataframe from an input CSV file"""
-        return pd.read_csv(os.path.abspath(filename))
+        return pd.read_csv('/../results/results.csv')

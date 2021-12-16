@@ -5,6 +5,8 @@ from calc.calculations.calculation import Calculation
 class Addition(Calculation):
     """Addition Class"""
 
+    operation = "addition"
+
     def get_result(self):
         """Get the addition results"""
 

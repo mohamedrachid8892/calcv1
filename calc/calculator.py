@@ -5,12 +5,6 @@ from calc.history.calculations import Calculations
 class Calculator:
     """Calculator class for performing simple arithmetic calculations"""
 
-    history = []
-
-    @staticmethod
-    def csv_row_to_tuple():
-        """Reads in a CSV file to be processed"""
-
     @staticmethod
     def get_result_value():
         """Returns the result of the last calculation"""
@@ -45,12 +39,12 @@ class Calculator:
         """Returns the history of calculations"""
         return Calculations.history
 
-    # @staticmethod
-    # def get_history_from_csv():
-    #     """Get history from CSV file"""
-    #     return Calculations.readHistoryfromCSV()
-    #
-    # @staticmethod
-    # def write_history_to_csv():
-    #     """Write the history to a CSV file"""
-    #     return Calculations.writeHistoryToCSV()
+    @staticmethod
+    def get_history_from_csv():
+        """Get history from CSV file"""
+        return Calculations.read_history_from_csv()
+
+    @staticmethod
+    def write_history_to_csv():
+        """Write the history to a CSV file"""
+        return Calculations.write_history_to_csv()

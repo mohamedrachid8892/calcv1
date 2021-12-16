@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <section class="text-sm-start">
+      <div class="container">
+        <div class="d-sm-flex align-items-md-center">
+          <h2 class="py-2"><strong>Calculation Result</strong></h2>
+        </div>
+        <div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Value 1: </strong> {{ value1 }}</li>
+            <li class="list-group-item"><strong>Value 2: </strong> {{ value2 }}</li>
+            <li class="list-group-item"><strong>Operation: </strong> {{ operation }}</li>
+            <li class="list-group-item"><strong>Result: </strong> {{ result }}</li>
+            <li class="list-group-item"> </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+{% endblock %}

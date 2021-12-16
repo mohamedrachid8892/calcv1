@@ -5,6 +5,8 @@ from calc.calculations.calculation import Calculation
 class Subtraction(Calculation):
     """Subtraction Class"""
 
+    operation = "subtraction"
+
     def get_result(self):
         """Subtract method to get the difference of numbers"""
 
